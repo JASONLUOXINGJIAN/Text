@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "TextUPimage";
+}
+
+<p>form上传图片为例</p>
+<form id="form1" name="form1" action="/Text/UPPicture" method="post" enctype="multipart/form-data">
+    <input id="file" type="file" name="file" />
+    <input id="submitimg" type="submit" name="" disabled="disabled" />
+    
+    <img id="selImg"style="width:100px;height:100px;display:none" />
+</form>
+        <script type="text/javascript">
+           
+           
+        var picString = "";
+        $(function () {
+            $("#file").change(function (e) {
+                var file = e.delegateTarget.files[0];
+                //在此可以对选择的文件进行判断:文件类型 文件大小等
+                //.....
+                values = file.name;
+                //alert(values.indexOf("."));
+                var imgtype = values.substring(values.indexOf(".") + 1).toLowerCase();
+                //alert(imgtype) 
+                var reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = function (ret) {
+                    picString = reader.result
+                    var imgtypes = ["jpg", "jpeg", "png", "gif"];
+                    var ishave = false;
+                    for (var i = 0; i < imgtypes.length; i++) {
+                        //alert(imgtypes[i])
+                        if (imgtype == imgtypes[i]) {
+                            //alert(imgtypes[i])
+                            ishave = true;
+                        }
+                    }
+                    if (ishave == true) {
+                        //图片不得超过4KB
+                        if (file.size < 4 * 1024) {
+                            //alert(file.size +"合适");
+                            //预览图片
+                            $("#selImg").attr({ "src": picString }).show();
+                            $("#submitimg").attr("disabled", false);
+                        } else {
+                            alert(file.size + "图片过大，请重新选择！！");
+                            $("#submitimg").attr("disabled", "disabled");
+                            $("#selImg").attr("src", "").hide();
+                            $("#file").val("");
+                        }
+
+
+
+                    } else {
+                        $("#submitimg").attr("disabled", "disabled");
+                        alert(ishave + "选择文件格式不对，请重新选择！！");
+                        $("#selImg").attr("src", "").hide();
+                        $("#file").val("");
+
+                    }
+                }
+            });
+        });
+       
+    </script>
+
+

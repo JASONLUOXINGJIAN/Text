@@ -1,0 +1,189 @@
+﻿
+@{
+    ViewBag.Title = "Text";
+}
+
+@*<h2>Text</h2>
+    <h4>@ViewBag.message</h4>
+    <h2><span>名字：</span>@ViewData["name"]</h2>
+    <h5>@Session["test"]</h5>*@
+
+     @*
+        <!DOCTYPE html>
+    <html>
+    <head>
+        <style>
+              html{
+                font-size:62.5%;
+            }
+
+            p{
+                font-size:14px;
+                font-size:1.4rem;
+            }
+             .div1 {
+                height:0;
+                width:80%;
+                padding-bottom:30%;
+                border:1px red solid;
+                text-align:center;
+
+            }
+            samp {
+
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="div1">
+           <samp>4134534534535354345345354345354345333333453453</samp>
+        </div>
+        <div style="width:100px;height:50px;border:1px solid red; overflow:auto">
+            圣诞节粉红色的方法立法破发巨大的的快捷方式几点几分
+            打发时间打发时间地方is地开了房减肥ID附件四大姐夫
+        </div>
+    </body>
+    </html>
+    *@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    <!--显示当前显示的页码--->
+    <div class="col-sm-6">
+        <div class="dataTables_info" id="sample-table-2_info"></div>
+    </div>
+    <!-- 分页 -->
+    <div class="col-sm-6">
+        <div class="dataTables_paginate paging_bootstrap" id="pager">
+
+        </div>
+    </div>
+    <div>
+        <ul class="pagination">
+            <li><a href="#">&laquo;</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">&raquo;</a></li>
+        </ul>
+    </div>
+    <ul class="pager">
+        <li id="uppage" class="previous"><a href="#">上一页</a></li>
+        <li id="nextpage" class="previous"><a href="#">下一页</a></li>
+    </ul>
+    <button class="" onclick="remove()">移除</button>
+</body>
+</html>
+<script type="text/javascript">
+    window.onload = function () {
+        $("#uppage").addClass("disabled");
+    }
+
+    function remove() {
+        alert("移除");
+        $("#uppage").removeClass("disabled");
+    }
+    /** 
+ * 分页信息 
+ * param datas 数据 
+ */  
+    function createPagerInfo(datas) {
+        /** 
+         * 绑定当前显示数据 
+         */
+        if (datas.pageCount != 0) {
+            $("#sample-table-2_info").html("<font style='font-weight:bold;'>当前第[" + datas.pageIndex + "/" + datas.pageCount + "]页 " + "共[" + datas.total + "]条数据</font>");
+        } else {
+            $("#sample-table-2_info").html("<font style='font-weight:bold;'>当前第[" + datas.pageCount + "/" + datas.pageCount + "]页 " + "共[" + datas.total + "]条数据</font>");
+
+            if (datas.pageCount != 0) {
+                //动态生成分页条  
+                $("#pager").html('<ul class="pagination">' +
+                        '<li class="next" id="start"><a href="#"  onclick="pageStart(' + datas.pageIndex + ')">首页</a></li>' +
+                        '<li class="next" id="up"><a  href="javascript:void(0)" onclick="pageUp(' + datas.pageIndex + ')">上一页</a></li>' +
+                        '<li class="next" id="down"><a  href="javascript:void(0)" onclick="pageDown(' + datas.pageIndex + ',' + datas.pageCount + ')" >下一页</a></li>' +
+                        '<li class="next" id="last"><a href="#"  onclick="pageLast(' + datas.pageIndex + ',' + datas.pageCount + ')">最后一页</a></li>' +
+                        '</ul>');
+            } else {
+                $("#pager").html('<ul class="pagination">' +
+                        '<li class="next" id="start"><a href="#"  onclick="pageStart(' + datas.pageIndex + ')">首页</a></li>' +
+                        '<li class="next" id="up"><a  href="javascript:void(0)" onclick="pageUp(' + datas.pageIndex + ')">上一页</a></li>' +
+                        '<li class="next" id="down"><a  href="javascript:void(0)" onclick="pageDown(' + datas.pageIndex + ',' + datas.pageCount + ')" >下一页</a></li>' +
+                        '<li class="next" id="last"><a href="#"  onclick="pageLast(' + datas.pageCount + ',' + datas.pageCount + ')">最后一页</a></li>' +
+                        '</ul>');
+            }
+        }
+    };
+    /** 
+ * 首页 
+ * param pageStartIndex 
+ */
+    function pageStart(pageStartIndex) {
+        var nowPage = pageStartIndex - 1;
+        var pageStart = 1;
+        if (nowPage == 0) {
+            $.msg("消息提示!", "当前已经是首页数据", "btn-primary");
+        } else {
+            gainDetailsInfo(pageStart);
+        }
+
+    }
+    /** 
+     * 最后一页 
+     * param pageIndex 
+     * param pageTotal 
+     */
+    function pageLast(pageIndex, pageTotal) {
+        console.info(pageIndex);
+        console.info(pageTotal);
+        var nowPage = pageTotal;
+        if (pageIndex == pageTotal) {
+            $.msg("消息提示!", "当前已经是最后一页数据", "btn-primary");
+        } else {
+            gainDetailsInfo(nowPage);
+        }
+
+
+
+
+
+    };
+    /** 
+     * 上一页 
+     * param c 
+     */
+    function pageUp(c) {
+        var nowPage = c - 1;
+        if (nowPage == 0 || nowPage == -1) {
+            $.msg("消息提示!", "当前已经是首页数据", "btn-primary");
+        } else {
+            gainDetailsInfo(nowPage);
+        }
+
+
+    };
+    /** 
+     * 下一页 
+     * param now 
+     * param total 
+     */
+    function pageDown(now, total) {
+        var nowPage = now + 1;
+        if (now == total || total == 0) {
+            $.msg("消息提示!", "当前已经是最后一页数据", "btn-primary");
+            $("#down").attr({ "disabled": "disabled" });
+        } else {
+            gainDetailsInfo(nowPage);
+        }
+
+    };
+</script>

@@ -1,0 +1,215 @@
+﻿
+@{
+    ViewBag.Title = "锁定问题";
+}
+<!DOCTYPE html>
+<thml>
+
+    <head>
+        
+
+        <style>
+            .navbar {
+                margin-bottom: 0px;
+            }
+
+            #a {
+                background-color: black;
+            }
+
+            .userimgheader {
+                float: left;
+                margin-top: 5px;
+            }
+
+            .communiontitle {
+                margin-left: 2px;
+                width: 90%;
+                float: left;
+            }
+
+            #sb {
+                float: left;
+            }
+
+            .c {
+                margin-top: 0px;
+                width:100%;
+                overflow:hidden;
+                border:0px solid red;
+            }
+
+            .panel {
+                margin-bottom: 0px;
+                font-size: 10px;
+            }
+
+            #right {
+                width: 70%;
+                margin-top: 0px;
+                float: left;
+                
+            }
+
+            #left {
+                width: 30%;
+                height: 700px;
+                margin-top: 0px;
+                border: solid 0px black;
+                float: left;
+            }
+
+            #bodyer {
+                width: auto;
+                height: auto;
+            }
+
+            #divclassify ul li {
+                font-size: 10px;
+                list-style-type: none;
+            }
+
+            #divclassify ul {
+                -webkit-padding-start: 10px;
+            }
+
+            #popularArticles ul li {
+                font-size: 10px;
+                list-style-type: none;
+            }
+
+            #popularArticles ul {
+                -webkit-padding-start: 10px;
+            }
+
+            .titlename {
+                float: left;
+                color: #b3b3b3;
+            }
+
+            .titleclass {
+                color: #727272;
+                float: left;
+            }
+             .ueditor {
+                width: 100%;
+            }
+            li badge
+            {
+                background-color:#e4e3e3;
+                font-weight: normal;
+            }
+            .badge
+            {
+                display: inline-block;
+                min-width: 10px;
+                padding: 3px 5px;
+                line-height: 1;
+                font-size: 8px;
+                color: #fff;
+                white-space: nowrap;
+                text-align: center;
+                border-radius: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="border:0px red solid;height:20%; margin-top:20PX;">
+
+        </div>
+        
+        <bodyer id="bodyer">
+            <div id="right" class="">
+                
+                <div class="c">
+                    <div class="userimgheader"><img style="width:40px;height:40px;" src="~/Content/Imags/Y`S5NH_CO~L5VC]}(6R4DC2.jpg" /></div>
+                    <div class="panel panel-default communiontitle" id="title2" onclick="clickto(this)">
+                        <div class="panel-body">
+                            <div style="width:auto;height:20px; border:0px solid black;margin-top:-5PX">
+                                <span class="titlename">分类：</span><a href="#" class="titleclass">Example Category</a>
+                            </div>
+                            <a href="#" style="color:black; font-weight:bold"><h5><b>标题名2</b></h5></a>
+                            <div style="width:auto;height:20px; border:0px solid black; margin-bottom:-10px;">
+                                <img class="userimgheader" src="~/Content/Imags/Y`S5NH_CO~L5VC]}(6R4DC2.jpg" style="width:10px;height:10px;" />
+                                <a href="#" style="float:left;margin-top:3px;margin-right:2px; color:#727272;">最新</a>
+                                <span style="float:left;margin-top:3px;margin-right:3px; color:#727272;">由</span>
+                                <span style="float:left;margin-top:3px;margin-right:3px"><a href="#" style="color:#727272;">visitor</a></span>
+                                <span style="float:left;margin-top:3px;margin-right:3px; color:#727272;">发表于 @DateTime.Now</span>
+                                <span class="glyphicon glyphicon-comment" style="float:left;margin-top:3px;margin-left:6px; color:#727272;"></span><span style="float:left;margin-top:3px;margin-left:1px; color:#727272;">4</span>
+                                <span class="glyphicon glyphicon-eye-open" style="float:left;margin-top:3px;margin-left:6px; color:#727272;"></span><span style="float:left;margin-top:3px;margin-left:1px; color:#727272;">57</span>
+                                <span class="glyphicon glyphicon-thumbs-up" style="float:left;margin-top:3px;margin-left:6px; color:#727272;"></span><span style="float:left;margin-top:3px;margin-left:1px; color:#727272;">5</span>
+                                <span class="glyphicon glyphicon-thumbs-down" style="float:left;margin-top:3px;margin-left:6px; color:#727272;"></span><span style="float:left;margin-top:3px;margin-left:1px; color:#727272;">5</span>
+                                <span class="glyphicon glyphicon-ok" style="float:left;margin-top:3px;margin-left:6px; color:#727272;"></span><span style="float:left;margin-top:3px;margin-left:1px; color:#727272;">答案被采纳</span>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                <div class="c">
+                    <div class="userimgheader"><img style="width:40px;height:40px;" src="~/Content/Imags/Y`S5NH_CO~L5VC]}(6R4DC2.jpg" /></div>
+                    <div class="panel panel-default communiontitle" id="title2" onclick="clickto(this)">
+                        <div class="panel-body">
+                            <div style="width:auto;height:20px; border:0px solid black;margin-top:-5PX">
+                                <span class="titlename">分类：</span><a href="#" class="titleclass">Example Category</a>
+                            </div>
+                            <a href="#" style="color:black; font-weight:bold"><h5><b>标题名2</b></h5></a>
+                            <div style="width:auto;height:20px; border:0px solid black; margin-bottom:-10px;">
+                                <img class="userimgheader" src="~/Content/Imags/Y`S5NH_CO~L5VC]}(6R4DC2.jpg" style="width:10px;height:10px;" />
+                                <a href="#" style="float:left;margin-top:3px;margin-right:2px; color:#727272;">最新</a>
+                                <span style="float:left;margin-top:3px;margin-right:3px; color:#727272;">由</span>
+                                <span style="float:left;margin-top:3px;margin-right:3px"><a href="#" style="color:#727272;">visitor</a></span>
+                                <span style="float:left;margin-top:3px;margin-right:3px; color:#727272;">发表于 @DateTime.Now</span>
+                                <span class="glyphicon glyphicon-comment" style="float:left;margin-top:3px;margin-left:6px; color:#727272;"></span><span style="float:left;margin-top:3px;margin-left:1px; color:#727272;">4</span>
+                                <span class="glyphicon glyphicon-eye-open" style="float:left;margin-top:3px;margin-left:6px; color:#727272;"></span><span style="float:left;margin-top:3px;margin-left:1px; color:#727272;">57</span>
+                                <span class="glyphicon glyphicon-thumbs-up" style="float:left;margin-top:3px;margin-left:6px; color:#727272;"></span><span style="float:left;margin-top:3px;margin-left:1px; color:#727272;">5</span>
+                                <span class="glyphicon glyphicon-thumbs-down" style="float:left;margin-top:3px;margin-left:6px; color:#727272;"></span><span style="float:left;margin-top:3px;margin-left:1px; color:#727272;">5</span>
+                                <span class="glyphicon glyphicon-ok" style="float:left;margin-top:3px;margin-left:6px; color:#727272;"></span><span style="float:left;margin-top:3px;margin-left:1px; color:#727272;">答案被采纳</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                </div>
+            
+                
+            <div id="left" class="">
+                <div id="addtheme" style="margin-left:20px; margin-top:5px; line-height:30px; background-color:#2abd54; text-align:center;width:80%;height:30px;"><a style="color:white;" href="@Url.Action("Index","UEditor")">新建主题</a></div>
+                <div id="divclassify" class="" style="color:#636267;width:100%;height:120px; margin-top:5px;">
+                    分类
+                    <ul>
+                        <li><a href="#" style="color:#3b3b3b;">所有</a></li>
+                        <li><a href="#" style="color:#3b3b3b;">Example Category</a></li>
+                        <li><a href="#" style="color:#3b3b3b;">123</a></li>
+                    </ul>
+                </div>
+                <div id="divsearch" style="color:#636267;width:100%;height:88px;margin-top:5px;">
+                    搜索
+                    <div style="color:#636267;width:100%;height:100%">
+                        <input placeholder="关键字" style="width:70%;float:left;height:30px;margin-top:10px;margin-left:10px" /><button style="float:left;color:#636267;margin-top:11px;">搜索</button>
+                    </div>
+
+                </div>
+
+                <div id="popularArticles" style="color:#636267;width:100%;height:120px;margin-top:5px;">
+                    热门文章
+                    <ul>
+                        <li>
+                            <span class="badge">1</span>
+                            <a href="#" style="color:#3b3b3b;">文章1</a>
+                        </li>
+                        <li>
+                            <span class="badge">2</span>
+                            <a href="#" style="color:#3b3b3b;">文章2</a>
+                        </li>
+                        <li>
+                            <span class="badge">3</span>
+                            <a href="#" style="color:#3b3b3b;">文章3</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </bodyer>
+
+
+    </body>
+    
+</thml>

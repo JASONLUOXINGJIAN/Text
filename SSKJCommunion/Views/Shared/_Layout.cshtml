@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSKJCommunion @ViewBag.Title</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</head>
+<body>
+
+    @*
+                <div class="navbar navbar-inverse navbar-fixed-top">
+                <ul class="nav navbar-nav">
+                    <li><img src="~/Content/Imags/Y`S5NH_CO~L5VC]}(6R4DC2.jpg" class="img-circle titleimg" /></li>
+
+
+                    <li><a href="@Url.Action("Index","Home")">开放问题</a></li>
+                    <li><a href="@Url.Action("hehe","Home")">锁定问题</a></li>
+                    <li><a href="">文章</a></li>
+                    <li><a href="">话题</a></li>
+                    <li><a href="">注册须知</a></li>
+                    <li><a href="">嗯嗯</a></li>
+                    @*
+                       <li>
+
+        <a class="arearch" ><input class="inptly form-control"><span onclick="" class="glyphicon glyphicon-search rearch">搜索</span></a>
+                        </li>
+             <li><a target="_blank" style="margin-left:100px;" href="@Url.Action("Index", "Login")">登录</a></li>
+        <li><a style="margin-left:-10px" href="@Url.Action("Register","Login")">注册</a></li>
+        </ul>
+        </div>
+    *@
+    <div class="navbar navbar-fixed-top navbar-inverse">
+        <div class="container">
+            <div class="nav-logo">
+                <a class="" href="">
+                    <img class="img-responsive" src="~/Content/Imags/Y`S5NH_CO~L5VC]}(6R4DC2.jpg" alt="昆明市双石科技有限公司" style="height: 100%;width: auto;" />
+                </a>
+            </div>
+        </div>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navBar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-right" id="navBar">
+            <ul id="nav" class="nav navbar-nav">
+                <li><a href="@Url.Action("Index","Home")">开放问题</a></li>
+                <li><a href="@Url.Action("hehe","Home")">锁定问题</a></li>
+                <li><a href="">文章</a></li>
+                <li><a href="">话题</a></li>
+                <li><a href="">注册须知</a></li>
+                <li><a href="">嗯嗯</a></li>
+                <li id="login"><a  style="margin-left:0px;" href="@Url.Action("Index", "Login")">登录</a></li>
+                <li id="register"><a target="_blank" style="margin-left:0px" href="@Url.Action("Register","Login")">注册</a></li>
+            </ul>
+        </div>
+        
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p style="text-align:center;width:100%;overflow:hidden">&copy; @DateTime.Now.Year - SSKJCommunion</p>
+        </footer>
+    </div>
+
+
+
+</body>
+</html>
+<script type="text/javascript">
+
+    window.onload = function () {
+        var loginname = "@Session["loginname"]";
+        if (loginname != "") {
+            $("#login").hide();
+            $("#register").hide();
+            $("#nav").append(
+                         '<li id="navtool" class="dropdown">' +
+                        '<a href="#" class="dropdown-toggle" data-toggle="dropdown">' +
+                            '我的工具' +
+                            '<b class="caret"></b>' +
+                        '</a>' +
+                        '<ul class="dropdown-menu">' +
+                            '<li><a href="#">编辑' + loginname + '</a></li>' +
+                            '<li><a href="#">私信</a></li>' +
+                            '<li><a href="@Url.Action("Quit", "Login")">退出</a></li>' +
+
+                        '</ul>' +
+                    '</li>'
+                );
+        }
+        else {
+            @*$("#login").show();
+            $("#register").show();
+            $("#navtool").hide();
+            alert("空");
+*@
+        }
+
+    };
+
+
+    function ToLogin() {
+        window.location.href = "@Url.Action("Index", "Login")"
+    }
+</script>
+<style type="text/css">
+
+     .nav-logo {
+            float: left;
+            height: 40px;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+
+            .nav-logo a {
+                margin: 0;
+                padding: 0;
+            }
+    .container{
+        max-height:0px;
+    }
+    .navbar-right{
+        float:left!important;
+    }
+    a {
+        color:#080808;
+    }
+</style>

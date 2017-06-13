@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "登录";
+}
+
+<!DOCTYPE html>
+<thml>
+    <head>
+        <meta charset="utf-8" />
+        <title>登录</title>
+        <style type="text/css">
+            .boder {
+                width:100%;
+                overflow:hidden;
+                border:1px white solid;
+                margin-top:25px;
+            }
+            .margin-letft {
+                margin-left:20%;
+            }
+            .iptusername{
+                width:60%;
+                margin-top:3px;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="border:1px white solid;height:20%; margin-top:25PX;">
+        </div>
+               @*
+          <boder class="boder">
+            <div class="margin-letft"><h5><b>登录</b></h5></div>
+            <div class="margin-letft" style="color:#737373;font-size: 10px">请输入你的用户名和密码,或<a href="@Url.Action("Register","Login")">注册</a>一个新账号</div>
+            <div class="margin-letft" style="font-size:11px;margin-top:10px"><b>用户名：</b></div>
+            <div class="margin-letft"><input class="iptusername" placeholder="输入用户名" required/></div>
+            <div class="margin-letft" style="font-size:11px;margin-top:10px"><b>密码：</b></div>
+            <div class="margin-letft"><input type="password" class="iptusername" placeholder="密码" required /></div>
+            <div class="margin-letft checkbox" style="font-size: 12px"><label><input type="checkbox" />记住</label></div>
+            <div class="margin-letft"><button style="background-color:#2abd54;width:70px;height:30px;">登录</button></div>
+            <div class="margin-letft" style="font-size:10px;margin-top:5px;"><a href="#">忘记密码</a></div>
+        </boder>
+            *@ 
+        <form action="/Login/LoginCheck" style="" class="boder" method="post">
+            <div class="margin-letft"><h5><b>登录</b></h5></div>
+            <div class="margin-letft" style="color:#737373;font-size: 10px">请输入你的用户名和密码,或<a href="@Url.Action("Register","Login")">注册</a>一个新账号</div>
+            <div class="margin-letft" style="font-size:11px;margin-top:10px"><b>用户名：</b></div>
+            <div class="margin-letft"><input class="iptusername" name="loginname" placeholder="输入用户名" required /></div>
+            <div class="margin-letft" style="font-size:11px;margin-top:10px"><b>密码：</b></div>
+            <div class="margin-letft"><input type="password" name="loginpwd" class="iptusername" placeholder="密码" required /></div>
+            <div class="margin-letft checkbox" style="font-size: 12px"><label><input type="checkbox" />记住</label></div>
+            <div class="margin-letft"><button type="submit" style="background-color:#2abd54;width:70px;height:30px;">登录</button></div>
+            <div class="margin-letft" style="font-size:10px;margin-top:5px;"><a href="#">忘记密码</a></div>
+        </form>
+    </body>
+</thml>
+
